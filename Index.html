@@ -5,18 +5,6 @@
         <script src="Script.js" defer></script>
         <link rel="style" href="Main.css"
 
-        <div class="topnav" id="myTopnav">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div
-        
-
-        
         <h1><br>Password manager</h1>
         <h2>Login Page</h2>
 
@@ -26,17 +14,15 @@
 
     </head>
     <body>
-        <p1>Please Enter Your username</p>
+      <div class="Signin">
+        <p1>Please Enter Your username</p1>
         <form>
             <label for="username"></label>
             <input type="text" id="fname" name="fname">
             <input type="submit" value="Submit">
           </form><br><br>
 
-
-
-
-          <p1>Please Enter Your password</p>
+          <p1>Please Enter Your password</p1>
             <form>
                 <label for="password"></label>
                 <input type="text" id="fname" name="fname">
@@ -44,9 +30,15 @@
               </form><br><br>
           <p2>"This is where the information will be displayed"</p2>
 
+              <div id="signinbtn">
+                <nav>
+                    <ul>
+                      <button onclick="signin_hide()">Sign in</button>
+                    </ul>
+                </nav>
+              </div>
 
-
-
+      </div>
 
 
 
