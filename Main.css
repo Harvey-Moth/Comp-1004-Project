@@ -26,6 +26,10 @@ body
 
 h2
 {
-		font size 18px;
+		font-size:18px;
 		font-family: Nunito;
+}
+.hidden
+{
+    display:none;
 }

@@ -1,12 +1,7 @@
 function signin_hide()
 {
-     var x = document.getElementById('Signin');
-     if (x.style.display === "none") {
-       x.style.display = "block";
-     } else {
-       x.style.display = "none";
-     }
-   }
+  document.getElementById('Signin').classList.add('hidden');
+}
 
 function signin_show()
 {
