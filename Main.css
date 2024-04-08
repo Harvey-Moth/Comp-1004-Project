@@ -33,3 +33,19 @@ h2
 {
     display:none;
 }
+.Navigationbar  {
+    background-color: #0d697e;
+    overflow: hidden;
+  }
+  .Navigationbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .Navigationbar a:hover {
+    background-color: #12caa9;
+  }
+

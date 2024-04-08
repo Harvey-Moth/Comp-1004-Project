@@ -1,9 +1,13 @@
-function signin_hide()
-{
-  document.getElementById('Signin').classList.add('hidden');
+document.getElementById('toploginbutton').addEventListener('click',(event) => {
+  
+    var vis = document.getElementById("Logincontent");
+    if (vis.style.display === "none") {
+      vis.style.display = "block";
+    } else {
+      vis.style.display = "none";
+    }
+
+
 }
 
-function signin_show()
-{
-    document.getElementsByClassName('Signin').hidden = false
-}
+)
