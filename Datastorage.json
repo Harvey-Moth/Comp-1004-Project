@@ -1,0 +1,24 @@
+{
+    "Users": [
+       {
+         "Username": "admin",
+         "Password": "Passwrd",
+         "SavedSite": {
+           "Username": "Adminsusername",
+           "Password": "Adminspassword",
+           "Website Name": "Harveyswebsite"
+         }
+           
+         }
+       ,
+       {
+         "username": "user one",
+         "password": "passwo1d",
+         "SavedSite": {
+            "Username": "Myusername",
+            "Password": "passkey13",
+            "Website Name": "Harveyswebsite"
+         }
+        }
+    ]
+}

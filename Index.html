@@ -17,7 +17,7 @@
     <body>
       <div class="Navigationbar">
         <a href="#"   id="tophomebutton">Home</a> 
-        <a href="#"   id="toploginbutton">login/signup</a> 
+        <a href="#"   id="submitnewpass">Submit New Password</a> 
 
       </div>
       <h1>Password manager</h1>
@@ -31,21 +31,41 @@
       </div>
 
 
-      <div id="Logincontent">
+      <div id="newpass">
         <div id="Signin">
           <h2>Login Page</h2>
-          <p1>Please Enter Your username</p1>
+          <p1>Please enter your <strong>MASTER</strong> username or type a new one if you do not have one</p1>
           <form>
               <label for="username"></label>
-              <input type="text" id="fname" name="fname">
+              <input type="text" id="Uname" name="Uname">
+            </form><br>
+            <p>Please re-type the username above</p>
+            <form>
+              <label for="username"></label>
+              <input type="text" id="Unamecheck" name="Unamecheck">
             </form><br><br>
   
-            <p1>Please Enter Your password</p1>
+            <p1>Please Enter your <strong>MASTER</strong> Password</p1>
               <form>
                   <label for="password"></label>
-                  <input type="text" id="fname" name="fname">
+                  <input type="password" id="Mpass" name="Mpass">
                 </form><br><br>
-          
+                
+                
+                
+                <div id="Showpasswordbutton">
+                <nav>
+                  <ul>
+                    <button onclick="Passwordvis('Mpass')">Show password</button>
+                  </ul>
+              </nav>
+              </div>
+
+
+
+
+
+
                 <div id="signinbtn">
                   <nav>
                       <ul>
