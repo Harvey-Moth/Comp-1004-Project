@@ -17,7 +17,7 @@ document.getElementById('tophomebutton').addEventListener('click',(event) => {
 })
 
 function Passwordvis(Passwordvisibility) {
-  let Passvis = document.getElementById(Passwordvisibility)
+  let Passvis = document.getElementById(Passwordvisibility);
   if (Passvis.type === "password")
   {
     Passvis.type = "text";
@@ -28,3 +28,22 @@ function Passwordvis(Passwordvisibility) {
   }
 
 }
+
+async function datafetch()
+{
+  fetch('Datastorage.json')
+  .then(response => response.json())
+  .then(data =>
+    {
+      JFdata = data;
+      localStorage.setItem("Users", JSON.stringify(JFdata));
+      console.log(JFdata)
+    })
+    .catch;
+  
+}
+
+let JFdata =[]
+datafetch();
+
+
