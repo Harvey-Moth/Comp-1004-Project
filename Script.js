@@ -1,3 +1,13 @@
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+
+
+
+
+
+
 var hvis = document.getElementById("Homecontent");
 var lvis = document.getElementById("newpass");
 var avis = document.getElementById("accessibilitysettings");

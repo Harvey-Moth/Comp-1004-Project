@@ -21,7 +21,10 @@ p2
 
 body
 {
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
+    padding: 0% 3% 10% 3%;
+    text-align: center;
+    transition: background-color 0.5s ease;
 }
 
 h2
@@ -30,8 +33,11 @@ h2
 		font-family: Arial, Helvetica, sans-serif;
 }
 .Navigationbar  {
-    background-color: #0d697e;
+    background-color: #737373;
     overflow: hidden;
+    border-radius: 10px;
+    
+    
   }
   .Navigationbar a {
     float: left;
@@ -41,17 +47,23 @@ h2
     text-decoration: none;
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
+    
   }
   .Navigationbar a:hover {
-    background-color: #12caa9;
+    background-color: #ababab;
   }
 
 #Showpasswordbutton
 {
     position: relative;
-    bottom: 74px;
-    left: 150px;
+    bottom: 30px;
+    left:-26px
+}
+#Passwordfield{
 
+    position: relative;
+    left: 0px;
+    top: 7px
 }
 
 #newpass {
@@ -62,4 +74,28 @@ h2
 #accessibilitysettings{
 
     display: none
+}
+.dark {
+    background-color: #313030;
+    color: #e6e6e6;
+    h1
+{
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+}
+
+.Navigationbar  {
+    background-color: #727272;
+    overflow: hidden;
+
+}
+.Navigationbar a:hover {
+  background-color: #2b2b2b;
+}
+   
+}
+#signinbtn {
+    position: relative;
+    bottom: 30px;
+    left:-26px
 }
