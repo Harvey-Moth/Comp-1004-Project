@@ -3,6 +3,7 @@
     <head>
 
       <script src="Script.js" defer></script>
+      <script src="Newwebaccount.js" defer></script>
         <link rel="stylesheet" href="Main.css"/>
         
       
@@ -17,7 +18,9 @@
     <body>
       <div class="Navigationbar">
         <a href="#"   id="tophomebutton">Home</a> 
-        <a href="#"   id="submitnewpass">Submit New Password</a> 
+        <a href="#"   id="submitnewpass">Create new account</a>
+        <a href="#"   id="Loginpage">Log in</a>
+        <a href="#"   id="Newwebsite">Submit website login details</a>
         <a href="#"   id="accessibility">Accessibility Settings</a>
 
       </div>
@@ -29,7 +32,7 @@
 
       <div id="newpass">
         <div id="Signin">
-          <h2>Login Page</h2>
+          <h2>Create new account</h2>
           <p1>Please enter your <strong>MASTER</strong> username or type a new one if you do not have one</p1>
           <form>
               <label for="username"></label>
@@ -63,21 +66,108 @@
 
 
                 <div id="signinbtn">
-                  <nav>
                       <ul>
                         <button onclick="Registeruser()">Sign in</button>
                       </ul>
-                  </nav>
                 </div>
   
         </div>
   
-  
-      </div>
+  </div>
+
+
+<div id="Loginaccountpage">
+  <div id="">
+    <p1>Please enter your username</p1>
+        <form>
+            <label for="existingusername"></label>
+            <input type="text" id="existuname" name="existuname">
+          </form><br>
+          <p>Please enter your password</p>
+          <form>
+            <label for="existingpassword"></label>
+            <input type="text" id="existpass" name="existpass">
+          </form><br><br>
+            <div id="buttontologin">
+                <ul>
+                  <button onclick="Loginbtn()">Submit</button>
+                </ul>
+            </div>
+   </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      <div id="accessibilitysettings">
         <p>These are the accessibility settings<br>If there is a setting you would like to change, please press the button below</p>
         <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
      </div>
+
+     <div id="Submitnewacountpage">
+      <p1>Please enter the website address or the name for the site you wish to add</p1>
+          <form>
+              <label for="Website"></label>
+              <input type="text" id="Wsite" name="Wsite">
+            </form><br>
+            <p>Please enter the username for the account you wish to add</p>
+            <form>
+              <label for="Webusername"></label>
+              <input type="text" id="Webuname" name="Webuname">
+            </form><br><br>
+  
+            <p1>Please enter the Password for the account</p1>
+              <form id="Websitepass">
+                  <label for="webpass"></label>
+                  <input type="password" id="Webpass" name="Webpass">
+                </form><br><br>
+              <div id="Submitnewpassbutton">
+                  <ul>
+                    <button onclick="">Submit</button>
+                  </ul>
+              </div>
+     </div>
+
+
+
+
+
+
 
     </body>
 

@@ -12,8 +12,8 @@
          }
        ,
        {
-         "username": "user one",
-         "password": "passwo1d",
+         "Username": "user one",
+         "Password": "passwo1d",
          "SavedSite": {
             "Username": "Myusername",
             "Password": "passkey13",

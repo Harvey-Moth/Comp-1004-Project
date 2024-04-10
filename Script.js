@@ -6,18 +6,19 @@ function toggleDarkMode() {
 
 
 
-
-
+var loginvis = document.getElementById("Loginaccountpage");
+var acvis = document.getElementById("Submitnewacountpage");
 var hvis = document.getElementById("Homecontent");
 var lvis = document.getElementById("newpass");
 var avis = document.getElementById("accessibilitysettings");
 document.getElementById('submitnewpass').addEventListener('click',(event) => {
   
     
-    
       lvis.style.display = "block";
       hvis.style.display = "none";
       avis.style.display = "none";
+      acvis.style.display = "none";
+      loginvis.style.display = "none";
       
 } )
 document.getElementById('tophomebutton').addEventListener('click',(event) => {
@@ -26,6 +27,8 @@ document.getElementById('tophomebutton').addEventListener('click',(event) => {
   hvis.style.display = "block";
   avis.style.display = "none";
   lvis.style.display = "none";
+  acvis.style.display = "none";
+  loginvis.style.display = "none";
 })     
 
 document.getElementById('accessibility').addEventListener('click',(event) => {
@@ -33,6 +36,30 @@ document.getElementById('accessibility').addEventListener('click',(event) => {
   avis.style.display = "block";   
   lvis.style.display = "none";
   hvis.style.display = "none";
+  acvis.style.display = "none";
+  loginvis.style.display = "none";
+})
+
+document.getElementById('Newwebsite').addEventListener('click',(event) => {
+  
+  
+  acvis.style.display = "block";
+  lvis.style.display = "none";
+  hvis.style.display = "none";
+  avis.style.display = "none";
+  loginvis.style.display = "none";
+
+})
+
+document.getElementById('Loginpage').addEventListener('click',(event) => {
+  
+  
+  loginvis.style.display = "block";
+  acvis.style.display = "none";
+  lvis.style.display = "none";
+  hvis.style.display = "none";
+  avis.style.display = "none";
+
 })
 
 function Passwordvis(Passwordvisibility) {
@@ -98,3 +125,5 @@ if(storedat) {
   JFdata = JSON.parse(localStorage.getItem("Users"));
 }
 console.log(JFdata);
+
+
