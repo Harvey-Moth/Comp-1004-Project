@@ -4,9 +4,9 @@
          "Username": "admin",
          "Password": "Passwrd",
          "SavedSite": {
-           "Siteusername": "Adminsusername",
-           "Password": "Adminspassword",
-           "Website Name": "Harveyswebsite"
+           "Siteusername": ["Adminsusername", "adminusername2"],
+           "Password": ["Adminspassword" , "adminpass2"],
+           "WebsiteName": ["Harveyswebsite", "mothywebsite"]
          }
            
          }
@@ -15,9 +15,9 @@
          "Username": "userone",
          "Password": "passwo1d",
          "SavedSite": {
-            "Siteusername": "Myusername",
-            "Password": "passkey13",
-            "Website Name": "Harveyswebsite"
+            "Siteusername": ["Myusername", "hisusername"],
+            "Password": ["passkey13", "passkey50"],
+            "WebsiteName": ["Harveyswebsite", "montywebsite"]
          }
         }
     ]

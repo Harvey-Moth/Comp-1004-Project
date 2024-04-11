@@ -22,7 +22,7 @@ for(let i = 0; i < JFdata.Users.length; i++){
       hideloginpage.style.display = "none";
       hideloginscreen.style.display = "none";
       showpassafterlogin.style.display = "block";
-      displaypasswords("Accountdisplay")
+      getusernames(Loginusername);
       
     
     
