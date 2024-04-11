@@ -1,30 +1,47 @@
 var Loginusername = document.getElementById("existuname").value;
 var Loginpassword = document.getElementById("existpass").value;
 function Loginbtn(){
-
+  var Loginusername = document.getElementById("existuname").value;
+  var Loginpassword = document.getElementById("existpass").value;
 for(let i = 0; i < JFdata.Users.length; i++){
+  console.log(Loginusername);
+  console.log(Loginpassword);
 
     if(Loginusername === JFdata.Users[i].Username && Loginpassword === JFdata.Users[i].Password){
         
         
-    
+      var savedaccountnav = document.getElementById("Savedpasswords")
+      var newpasswordnav = document.getElementById("Newwebsite")
+      var hidecreateac = document.getElementById("submitnewpass")
+      var hideloginpage = document.getElementById("Loginpage")
+      var hideloginscreen = document.getElementById("Loginaccountpage")
+      var showpassafterlogin = document.getElementById("Savedpass")
+      savedaccountnav.style.display = "block";
+      newpasswordnav.style.display = "block";
+      hidecreateac.style.display = "none";
+      hideloginpage.style.display = "none";
+      hideloginscreen.style.display = "none";
+      showpassafterlogin.style.display = "block";
+      displaypasswords("Accountdisplay")
+      
     
     
     
     }
 }   
+}
 
 
-async function passwordhashing(password) {
+/*async function passwordhashing(password) {
     password  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
     password  = Array.from(new Uint8Array(password)).map(b => b.toString(16).padStart(2, '0')).join(''); //Adminspassword passkey13 are the two different passwords for the two different accounts before hashing.
-    return password;
-  }
+    return password; */ //Decided against adding hashing.
+  
 
 
 
 
-}
+
 
 
 

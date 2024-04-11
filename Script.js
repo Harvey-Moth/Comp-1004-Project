@@ -11,6 +11,7 @@ var acvis = document.getElementById("Submitnewacountpage");
 var hvis = document.getElementById("Homecontent");
 var lvis = document.getElementById("newpass");
 var avis = document.getElementById("accessibilitysettings");
+var savedvis = document.getElementById("Savedpass");
 document.getElementById('submitnewpass').addEventListener('click',(event) => {
   
     
@@ -19,6 +20,7 @@ document.getElementById('submitnewpass').addEventListener('click',(event) => {
       avis.style.display = "none";
       acvis.style.display = "none";
       loginvis.style.display = "none";
+      savedvis.style.display = "none";
       
 } )
 document.getElementById('tophomebutton').addEventListener('click',(event) => {
@@ -29,6 +31,7 @@ document.getElementById('tophomebutton').addEventListener('click',(event) => {
   lvis.style.display = "none";
   acvis.style.display = "none";
   loginvis.style.display = "none";
+  savedvis.style.display = "none";
 })     
 
 document.getElementById('accessibility').addEventListener('click',(event) => {
@@ -38,6 +41,7 @@ document.getElementById('accessibility').addEventListener('click',(event) => {
   hvis.style.display = "none";
   acvis.style.display = "none";
   loginvis.style.display = "none";
+  savedvis.style.display = "none";
 })
 
 document.getElementById('Newwebsite').addEventListener('click',(event) => {
@@ -48,7 +52,7 @@ document.getElementById('Newwebsite').addEventListener('click',(event) => {
   hvis.style.display = "none";
   avis.style.display = "none";
   loginvis.style.display = "none";
-
+  savedvis.style.display = "none";
 })
 
 document.getElementById('Loginpage').addEventListener('click',(event) => {
@@ -59,8 +63,27 @@ document.getElementById('Loginpage').addEventListener('click',(event) => {
   lvis.style.display = "none";
   hvis.style.display = "none";
   avis.style.display = "none";
+  savedvis.style.display = "none";
+})
+
+document.getElementById('Savedpasswords').addEventListener('click',(event) => {
+  
+  savedvis.style.display = "block";
+  loginvis.style.display = "none";
+  acvis.style.display = "none";
+  lvis.style.display = "none";
+  hvis.style.display = "none";
+  avis.style.display = "none";
 
 })
+
+
+
+
+
+
+
+
 
 function Passwordvis(Passwordvisibility) {
   let Passvis = document.getElementById(Passwordvisibility);
@@ -125,5 +148,25 @@ if(storedat) {
   JFdata = JSON.parse(localStorage.getItem("Users"));
 }
 console.log(JFdata);
+let Users
+function getusernames() {
 
+return JFdata.Users.find(Users => Users.Username === Loginusername);
 
+}
+function displaypasswords() {
+
+  
+Users == getusernames();
+//let usersearch = "admin";
+//let Users = Users.find(Users => Users.Username === usersearch);
+if (Users) {
+    let Savedsite = Users.Username;
+    console.log(Savedsite);
+} else {
+    console.log("User not found");
+}
+
+ }
+
+ 

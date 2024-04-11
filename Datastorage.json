@@ -4,7 +4,7 @@
          "Username": "admin",
          "Password": "Passwrd",
          "SavedSite": {
-           "Username": "Adminsusername",
+           "Siteusername": "Adminsusername",
            "Password": "Adminspassword",
            "Website Name": "Harveyswebsite"
          }
@@ -12,10 +12,10 @@
          }
        ,
        {
-         "Username": "user one",
+         "Username": "userone",
          "Password": "passwo1d",
          "SavedSite": {
-            "Username": "Myusername",
+            "Siteusername": "Myusername",
             "Password": "passkey13",
             "Website Name": "Harveyswebsite"
          }
