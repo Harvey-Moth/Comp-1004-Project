@@ -238,6 +238,9 @@ for(let i = 0; i < JFdata.Users.length; i++){
 }
 
 
+
+
+
 /*async function passwordhashing(password) {
     password  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
     password  = Array.from(new Uint8Array(password)).map(b => b.toString(16).padStart(2, '0')).join(''); //Adminspassword passkey13 are the two different passwords for the two different accounts before hashing.
