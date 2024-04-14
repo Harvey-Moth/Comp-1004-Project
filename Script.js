@@ -98,8 +98,9 @@ function Passwordvis(Passwordvisibility) {
 
 }
 
- async function datafetch()
-{
+ async function datafetch() {
+  let Localstoragec = localStorage.getItem("Users")
+  if( Localstoragec == null){
   fetch('Datastorage.json')
   .then(response => response.json())
   .then(data =>
@@ -109,6 +110,7 @@ function Passwordvis(Passwordvisibility) {
       console.log(JFdata)
     })
     .catch;
+  }
 }
 
 let JFdata =[]
@@ -187,6 +189,7 @@ if (foundname.Username == username) {
 
 function displayaccounts() {
 const accdiv = document.getElementById("Accountdisplay")
+accdiv.innerHTML = ""
 for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++){
 const usernamedisplay = document.createElement("ol")
 usernamedisplay.textContent = `Username = ${foundname.SavedSite.Siteusername[i]}`;
@@ -236,27 +239,47 @@ for(let i = 0; i < JFdata.Users.length; i++){
     }
 }   
 }
-function Alreadyexists(){
+function isempty() {
+  if( document.getElementById("Webuname").value != "" && document.getElementById("Webpass").value != "" && document.getElementById("Wsite").value != "") {
 
+  
+Alreadyexists()
+  }
+  else{
+    alert("One or more fields are not valid or empty")
+  }
+}
+
+
+
+
+
+
+
+
+
+function Alreadyexists(){
+var Usernamefound = false
 for(let i = 0; i < foundname.SavedSite.WebsiteName.length; i++) {
   if(foundname.SavedSite.WebsiteName[i] === document.getElementById("Wsite").value && foundname.SavedSite.Siteusername[i] === document.getElementById("Webuname").value){
-    alert("You have already used this username for this site")
-      
+    alert("You have already used this username for this site");
+      Usernamefound = true;
     }
-  else{
-    document.getElementById("Wsite").value
-    document.getElementById("Webuname").value
-    document.getElementById("Webpass").value
+  
   }
+  if(Usernamefound == false){
+    foundname.SavedSite.WebsiteName.push(document.getElementById("Wsite").value)
+
+      foundname.SavedSite.Siteusername.push(document.getElementById("Webuname").value)
+      foundname.SavedSite.Password.push(document.getElementById("Webpass").value)
+      localStorage.setItem("Users", JSON.stringify(JFdata));
     
   
-  
 
    
   }
-   
+   displayaccounts()
   }
-
 
 
 

@@ -139,22 +139,22 @@
       <p1>Please enter the website address or the name for the site you wish to add</p1>
           <form>
               <label for="Website"></label>
-              <input type="text" id="Wsite" name="Wsite">
+              <input type="text" id="Wsite" name="Wsite" required>
             </form><br>
             <p>Please enter the username for the account you wish to add</p>
             <form>
               <label for="Webusername"></label>
-              <input type="text" id="Webuname" name="Webuname">
+              <input type="text" id="Webuname" name="Webuname" required>
             </form><br><br>
   
             <p1>Please enter the Password for the account</p1>
               <form id="Websitepass">
                   <label for="webpass"></label>
-                  <input type="password" id="Webpass" name="Webpass">
+                  <input type="password" id="Webpass" name="Webpass" required>
                 </form><br><br>
               <div id="Submitnewpassbutton">
                   <ul>
-                    <button onclick="Alreadyexists()">Submit</button>
+                    <button onclick="isempty()">Submit</button>
                   </ul>
               </div>
      </div>
