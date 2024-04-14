@@ -285,6 +285,53 @@ for(let i = 0; i < foundname.SavedSite.WebsiteName.length; i++) {
 
 
 
+  function Makenewac(){
+    var Usernamefound = false
+    for(let i = 0; i < JFdata.Users.length; i++) {
+      if(JFdata.Users[i].Username === document.getElementById("Uname").value){
+        alert("This user already exists");
+          Usernamefound = true;
+        }
+      
+      }
+      if(Usernamefound == false){
+        var Userformat = 
+        {
+          "Username": document.getElementById("Uname").value,
+         "Password": document.getElementById("Mpass").value,
+         "SavedSite": {
+            "Siteusername":[],
+            "Password":[],
+            "WebsiteName":[],
+          }
+          
+}
+
+        JFdata.Users.push(Userformat);
+        localStorage.setItem("Users", JSON.stringify(JFdata));
+
+
+        loginvis.style.display = "block";
+        acvis.style.display = "none";
+        lvis.style.display = "none";
+        hvis.style.display = "none";
+        avis.style.display = "none";
+        savedvis.style.display = "none";
+      }
+      }
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*async function passwordhashing(password) {
     password  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
