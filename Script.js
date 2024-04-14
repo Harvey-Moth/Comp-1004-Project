@@ -236,6 +236,28 @@ for(let i = 0; i < JFdata.Users.length; i++){
     }
 }   
 }
+function Alreadyexists(){
+
+for(let i = 0; i < foundname.SavedSite.WebsiteName.length; i++) {
+  if(foundname.SavedSite.WebsiteName[i] === document.getElementById("Wsite").value && foundname.SavedSite.Siteusername[i] === document.getElementById("Webuname").value){
+    alert("You have already used this username for this site")
+      
+    }
+  else{
+    document.getElementById("Wsite").value
+    document.getElementById("Webuname").value
+    document.getElementById("Webpass").value
+  }
+    
+  
+  
+
+   
+  }
+   
+  }
+
+
 
 
 
