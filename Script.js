@@ -144,7 +144,6 @@ function Registeruser() {
 
 } 
 Mainfunction()
-console.log(JFdata);
 if(storedat) {
 
   JFdata = JSON.parse(localStorage.getItem("Users"));
@@ -250,36 +249,38 @@ Alreadyexists()
   }
 }
 
-
-
-
-
-
-
-
-
-function Alreadyexists(){
-var Usernamefound = false
-for(let i = 0; i < foundname.SavedSite.WebsiteName.length; i++) {
-  if(foundname.SavedSite.WebsiteName[i] === document.getElementById("Wsite").value && foundname.SavedSite.Siteusername[i] === document.getElementById("Webuname").value){
-    alert("You have already used this username for this site");
-      Usernamefound = true;
+   function Alreadyexists(){
+    var Usernamefound = false;
+    for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++) {
+      
+    
+    if(foundname.SavedSite.WebsiteName[i] == document.getElementById("Wsite").value && foundname.SavedSite.Siteusername[i] == document.getElementById("Webuname").value){
+    
+    Usernamefound = true;
+    count = i;
+    
     }
-  
-  }
-  if(Usernamefound == false){
-    foundname.SavedSite.WebsiteName.push(document.getElementById("Wsite").value)
+    }
+   if(Passwordstrength(document.getElementById("Webpass").value) == true && Usernamefound == false){
 
+      foundname.SavedSite.WebsiteName.push(document.getElementById("Wsite").value)
       foundname.SavedSite.Siteusername.push(document.getElementById("Webuname").value)
       foundname.SavedSite.Password.push(document.getElementById("Webpass").value)
       localStorage.setItem("Users", JSON.stringify(JFdata));
-    
-  
+      alert("Success")
 
-   
-  }
+   }
+   else if(Usernamefound == true){
+    alert("You have already used this username for this site")
+   }
+   else{
+    alert("Passwords must contain at least 8 characters, at least one upper and lower case, at least one special character and at least one number")
+
+   }
    displayaccounts()
   }
+   
+  
 
 
 
@@ -319,12 +320,56 @@ for(let i = 0; i < foundname.SavedSite.WebsiteName.length; i++) {
         savedvis.style.display = "none";
       }
       }
+      var Websitefound = false;
+      var count = 0;
+      function Updaterecord(){
+        for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++) {
+
+        
+        if(document.getElementById("Wsite").value == foundname.SavedSite.WebsiteName[i]){
+        
+        Websitefound = true;
+        count = i;
+        
+        }
+        }
+       if(Passwordstrength(document.getElementById("Webpass").value) == true && Websitefound == true){
+
+        foundname.SavedSite.Siteusername[count] = document.getElementById("Webuname").value; 
+          foundname.SavedSite.Password[count] = document.getElementById("Webpass").value; 
+          localStorage.setItem("Users", JSON.stringify(JFdata));
+          alert("Success")
+          displayaccounts();
+
+
+       }
+       else if(Websitefound == false){
+        alert("No exising webisite found")
+       }
+       else{
+        alert("Passwords must contain at least 8 characters, at least one upper and lower case, at least one special character and at least one number")
+
+       }
+      }
+
+      
+      
     
-
-
-
-
-
+    function Passwordstrength(password) {
+      
+      const Haslowercase = /[a-z]/.test(password);
+      
+      const Hasuppercase = /[A-Z]/.test(password);
+      
+      const Hasdigit = /\d/.test(password);
+      
+      const Hasspecial = /[/?!@#$%^&*()-_=+[{};:'"]/.test(password);
+      
+      const Minimumlength = password.length >= 8; 
+      console.log(Haslowercase && Hasuppercase && Hasdigit && Hasspecial &&  Minimumlength)
+      return Haslowercase && Hasuppercase && Hasdigit && Hasspecial &&  Minimumlength;
+      
+     }
 
 
 

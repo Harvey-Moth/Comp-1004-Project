@@ -131,27 +131,32 @@
      </div>
 
      <div id="Submitnewacountpage">
-      <p1>Please enter the website address or the name for the site you wish to add</p1>
+      <p1>Please enter the website address or the name for the site you wish to add or update</p1>
           <form>
               <label for="Website"></label>
-              <input type="text" id="Wsite" name="Wsite" required>
+              <input type="text" id="Wsite" name="Wsite">
             </form><br>
-            <p>Please enter the username for the account you wish to add</p>
+            <p>Please enter the username for the account you want to add to or update.</p>
             <form>
               <label for="Webusername"></label>
-              <input type="text" id="Webuname" name="Webuname" required>
+              <input type="text" id="Webuname" name="Webuname">
             </form><br><br>
   
-            <p1>Please enter the Password for the account</p1>
+            <p1>Please enter the Password for the account you wish to add to or update</p1>
               <form id="Websitepass">
                   <label for="webpass"></label>
-                  <input type="password" id="Webpass" name="Webpass" required>
+                  <input type="password" id="Webpass" name="Webpass">
                 </form><br><br>
               <div id="Submitnewpassbutton">
                   <ul>
-                    <button onclick="isempty()">Submit</button>
+                    <button onclick="isempty()">Submit New</button>
                   </ul>
               </div>
+              <div id="Updatepassbutton">
+                <ul>
+                  <button onclick="Updaterecord()">Update</button>
+                </ul>
+            </div>
      </div>
 
 
