@@ -1,10 +1,10 @@
 
 function toggleDarkMode() {
-  document.body.classList.toggle("dark");
+  document.body.classList.toggle("dark"); //Function that toggles between the css for light and dark.
 }
 
 
-
+//This section controls the visibility of pages to ensure the CSS for the pages is hidden when needed, this allows for the navigation bar functionality.
 
 var loginvis = document.getElementById("Loginaccountpage");
 var acvis = document.getElementById("Submitnewacountpage");
@@ -76,14 +76,7 @@ document.getElementById('Savedpasswords').addEventListener('click',(event) => {
   avis.style.display = "none";
 
 })
-
-
-
-
-
-
-
-
+//Function that when called, hides and displays the text in the passsword fields specified in the html.
 
 function Passwordvis(Passwordvisibility) {
   let Passvis = document.getElementById(Passwordvisibility);
@@ -97,112 +90,56 @@ function Passwordvis(Passwordvisibility) {
   }
 
 }
-
+//Checks to see if local storage is empty, if it is, it fetches the data from the JSON.
+//If local storage is not empty we will use that instead as it contains the JSON data aswell.
  async function datafetch() {
-  let Localstoragec = localStorage.getItem("Users")
-  if( Localstoragec == null){
+  JFdata = JSON.parse(localStorage.getItem("Users"));
+  if( JFdata == null){
   fetch('Datastorage.json')
   .then(response => response.json())
   .then(data =>
     {
       JFdata = data;
       localStorage.setItem("Users", JSON.stringify(JFdata));
-      console.log(JFdata)
     })
     .catch;
   }
 }
-
-let JFdata =[]
+//Creating the array that stores the JSON file data/ Local storage data.
+let JFdata =[];
+//Function that calls datafetch as an async to be sure the data is loaded.
 async function Mainfunction(){
 
   await datafetch();
 }
 let storedat = localStorage.getItem("Users");
 
-function Registeruser() {
-
-  var usernameinput1 = document.getElementById("Uname").value;
-  var usernameinput2 = document.getElementById("Unamecheck").value;  
-  var passwordinput = document.getElementById("Mpass").value;
-  var Exsistingusername = false
-  if(usernameinput1 === usernameinput2){
-
-  for(let i = 0; i < JFdata.Users.length; i++) { 
-    if(JFdata.Users[i].Username===usernameinput1) {
-    alert("This user already exits"); 
-    console.log(JFdata.users[i]);
-    Exsistingusername = true
-    }
-  }  
-  
-
-
-
-  
-  }
-
-} 
+//Calling the main function and creating the variable foundname to store the data of the currently "logged in" user.
 Mainfunction()
-if(storedat) {
-
-  JFdata = JSON.parse(localStorage.getItem("Users"));
-}
-console.log(JFdata);
-let foundname
+let foundname;
 function getusernames(username) {
 foundname = JFdata.Users.find(Users => Users.Username === username);
 displayaccounts();
 }
-/*function displaypasswords(username) {
-console.log(username)
-  
-foundname = getusernames(username);
-//let usersearch = "admin";
-//let Users = Users.find(Users => Users.Username === usersearch);
-if (foundname.Username == username) {
-    let Savedsite = foundname.Savedsite.Siteusername; 
-    console.log(Savedsite);
-} else {
-    console.log("User not found");
-}
- console.log(foundname);
- } */
-/* function grabsavedsitedata(username) {
-  console.log(username);
 
-  foundname = getusernames(username);
-  if (foundname && foundname.Username == username) {
-      if (foundname.SavedSite) {
-          let Savedsite = foundname.SavedSite;
-      } else {
-          console.log("Savedsite is undefined");
-      }
-  } else {
-      console.log("User not found");
-  }
-  console.log(foundname); 
-
-}
-*/
-
+//This function displays savedsite information as an ordered list. It does this by first clearing the HTML and then redisplaying the HTML with the newest information.
+//This ensures no errors occur when displaying the data.
 function displayaccounts() {
-const accdiv = document.getElementById("Accountdisplay")
-accdiv.innerHTML = ""
+const accdiv = document.getElementById("Accountdisplay");
+accdiv.innerHTML = "";
 for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++){
-const usernamedisplay = document.createElement("ol")
+const usernamedisplay = document.createElement("ol");
 usernamedisplay.textContent = `Username = ${foundname.SavedSite.Siteusername[i]}`;
-accdiv.appendChild(usernamedisplay)
-const passworddisplay = document.createElement("ol")
+accdiv.appendChild(usernamedisplay);
+const passworddisplay = document.createElement("ol");
 passworddisplay.textContent = `Password = ${foundname.SavedSite.Password[i]}`;
-accdiv.appendChild(passworddisplay)
-const Websitenamdis = document.createElement("ol")
+accdiv.appendChild(passworddisplay);
+const Websitenamdis = document.createElement("ol");
 Websitenamdis.textContent = `Website Name = ${foundname.SavedSite.WebsiteName[i]}`;
-accdiv.appendChild(Websitenamdis)
-
-
-
-
+accdiv.appendChild(Websitenamdis);
+const Linebreak = document.createElement("p");
+Linebreak.textContent = `-------------------------------------------------------------------------------------------------------------------------------------------------------------------`
+accdiv.appendChild(Linebreak);
 }}
 
 
@@ -238,30 +175,31 @@ for(let i = 0; i < JFdata.Users.length; i++){
     }
 }   
 }
+//Function to check if any of the input fields are empty, if they are it will alert the user, if they are not, it will run the function "Addingaccount".
 function isempty() {
   if( document.getElementById("Webuname").value != "" && document.getElementById("Webpass").value != "" && document.getElementById("Wsite").value != "") {
 
   
-Alreadyexists()
+Addingaccount()
   }
   else{
     alert("One or more fields are not valid or empty")
   }
 }
-
-   function Alreadyexists(){
+//This function is called in the section above, this function is resposible for adding the account to Localstorge with some error handling.
+   function Addingaccount(){
     var Usernamefound = false;
     for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++) {
       
     
     if(foundname.SavedSite.WebsiteName[i] == document.getElementById("Wsite").value && foundname.SavedSite.Siteusername[i] == document.getElementById("Webuname").value){
-    
+    //This if statement ensures if the websitename and username are the same they cannot add the account.
     Usernamefound = true;
     count = i;
     
     }
     }
-   if(Passwordstrength(document.getElementById("Webpass").value) == true && Usernamefound == false){
+   if(Passwordstrength(document.getElementById("Webpass").value) == true && Usernamefound == false){ //
 
       foundname.SavedSite.WebsiteName.push(document.getElementById("Wsite").value)
       foundname.SavedSite.Siteusername.push(document.getElementById("Webuname").value)
@@ -285,7 +223,7 @@ Alreadyexists()
 
 
 
-
+// Function to check if a username already exists and if not gets the inputs from the fields and inserts it into JFdata and Localstorage.
   function Makenewac(){
     var Usernamefound = false
     for(let i = 0; i < JFdata.Users.length; i++) {
@@ -322,6 +260,7 @@ Alreadyexists()
       }
       var Websitefound = false;
       var count = 0;
+      //This function is for updating the records by getting the value in the website input field and checking it against localstorage.
       function Updaterecord(){
         for(let i = 0; i < foundname.SavedSite.Siteusername.length; i++) {
 
@@ -354,47 +293,27 @@ Alreadyexists()
 
       
       
-    
+    // Makes sure the inputs in the password fields its applied to meet the requirements set to ensure it is a strong password.
     function Passwordstrength(password) {
       
       const Haslowercase = /[a-z]/.test(password);
-      
       const Hasuppercase = /[A-Z]/.test(password);
-      
       const Hasdigit = /\d/.test(password);
-      
-      const Hasspecial = /[/?!@#$%^&*()-_=+[{};:'"]/.test(password);
-      
-      const Minimumlength = password.length >= 8; 
-      console.log(Haslowercase && Hasuppercase && Hasdigit && Hasspecial &&  Minimumlength)
+      const Hasspecial = /(?=.*[/?!@#$%^&*()_=+[{};:'"])/.test(password);
+      const Minimumlength = password.length >= 8;
       return Haslowercase && Hasuppercase && Hasdigit && Hasspecial &&  Minimumlength;
       
      }
-
-
-
-
-
-
-
-
-/*async function passwordhashing(password) {
-    password  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
-    password  = Array.from(new Uint8Array(password)).map(b => b.toString(16).padStart(2, '0')).join(''); //Adminspassword passkey13 are the two different passwords for the two different accounts before hashing.
-    return password; */ //Decided against adding hashing.
-  
-
-
-
-
-
-
-
-
-//Passwrd = 9299fc3255aef89059446fd69c419e7b3dccf97f08ed831914469085bad580b0 = account is "admin"
-//passwo1d = d077869f964b47ba14d7eeea0f69fb0c31bb1c8739e4c8d9a6897f4781db47b1 = account is "user one"
-// Adminpassword = 17f6a9b48be6cfb28a05f25e5a8903a6b3975817a6a73115f24beddbde7edd15 =For account Adminsusername under the account admin
-//passkey13 = 32dc7d6bcc5212b4b9b3b8e19156bb22225e516faabbfbca9fa1727f48f7ea92 = for the account myusername under the account user one 
+//This function exports the savedsite information to a JSON file.
+     function Exportfunc() {
+        var Anchortag = document.createElement('a');
+        var Data  = JSON.stringify(foundname.SavedSite); 
+        var Downloaddata = new Blob([Data], {type: 'application/json'});
+        var Down = URL.createObjectURL(Downloaddata);
+        Anchortag.href = Down;
+        Anchortag.download = 'Accounts.json'; 
+        Anchortag.click();
+      }
 
 
 

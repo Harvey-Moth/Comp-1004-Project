@@ -34,13 +34,13 @@
       <div id="newpass">
         <div id="Signin">
           <h2>Create new account</h2>
-          <p1>Please enter your <strong>MASTER</strong> username or type a new one if you do not have one</p1>
+          <p1>Please enter a <strong>MASTER</strong> username</p1>
           <form>
               <label for="username"></label>
               <input type="text" id="Uname" name="Uname">
             </form><br>
   
-            <p1>Please Enter your <strong>MASTER</strong> Password</p1>
+            <p1>Please Enter a <strong>MASTER</strong> Password</p1>
               <form id="Passwordfield">
                   <label for="password"></label>
                   <input type="password" id="Mpass" name="Mpass">
@@ -86,8 +86,15 @@
           </form><br><br>
             <div id="buttontologin">
                 <ul>
-                  <button onclick="Loginbtn()">Submit</button>
+                  <button onclick="Loginbtn()">Log in</button>
                 </ul>
+            </div>
+            <div id="Showpasswordbutton2">
+              <nav>
+                <ul>
+                  <button onclick="Passwordvis('existpass')">Show password</button>
+                </ul>
+            </nav>
             </div>
    </div>
 </div>
@@ -162,6 +169,11 @@
 
      <div id="Savedpass">
         <p>Saved Web accounts</p>
+        <div id="Export">
+          <ul>
+            <button onclick="Exportfunc()">Export to JSON</button>
+          </ul>
+      </div>
 
       <div id="Accountdisplay">
 
