@@ -1,5 +1,8 @@
 This project is a Password Manager for my Comp1004 coursework, the aim of the project is to create a Password Manager that can create, store, edit and display passwords to and from the user.
+
+
 **Features**
+
 - Ability to make a Master Account
 - Ability to store passwords
 - Ability to store website name
@@ -11,6 +14,7 @@ This project is a Password Manager for my Comp1004 coursework, the aim of the pr
 
 
 **Requirements**
+
 Visual studio code with the "live Preview" extension
 A Laptop or desktop computer
 Windows(Linux not tested)
