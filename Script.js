@@ -112,7 +112,6 @@ async function Mainfunction(){
 
   await datafetch();
 }
-let storedat = localStorage.getItem("Users");
 
 //Calling the main function and creating the variable foundname to store the data of the currently "logged in" user.
 Mainfunction()
@@ -180,10 +179,10 @@ function isempty() {
   if( document.getElementById("Webuname").value != "" && document.getElementById("Webpass").value != "" && document.getElementById("Wsite").value != "") {
 
   
-Addingaccount()
+Addingaccount();
   }
   else{
-    alert("One or more fields are not valid or empty")
+    alert("One or more fields are not valid or empty");
   }
 }
 //This function is called in the section above, this function is resposible for adding the account to Localstorge with some error handling.
@@ -209,13 +208,13 @@ Addingaccount()
 
    }
    else if(Usernamefound == true){
-    alert("You have already used this username for this site")
+    alert("You have already used this username for this site");
    }
    else{
-    alert("Passwords must contain at least 8 characters, at least one upper and lower case, at least one special character and at least one number")
+    alert("Passwords must contain at least 8 characters, at least one upper and lower case, at least one special character and at least one number");
 
    }
-   displayaccounts()
+   displayaccounts();
   }
    
   
